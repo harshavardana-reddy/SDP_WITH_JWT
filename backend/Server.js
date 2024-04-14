@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI_COMPASS)
+mongoose.connect(process.env.MONGODB_URI_ATLAS)
 .then(() => console.log(clc.green.underline('Connected to Database Successfully')))
 .catch(err => console.log(clc.red(` Error while connecting to Database: ${err.message}`)));
 app.get("/",(req,res)=>{
