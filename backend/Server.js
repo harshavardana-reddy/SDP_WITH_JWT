@@ -15,7 +15,9 @@ app.use(cors());
 mongoose.connect(process.env.MONGODB_URI_COMPASS)
 .then(() => console.log(clc.green.underline('Connected to Database Successfully')))
 .catch(err => console.log(clc.red(` Error while connecting to Database: ${err.message}`)));
-
+app.get("/",(req,res)=>{
+  res.status(200).send("ELMS Backend Started")
+}
 app.use("/admin",adminrouter)
 
 app.use("/employee",employeeRouter)
